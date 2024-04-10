@@ -49,12 +49,13 @@ The resulting model achieved a R-squared score of 0.90 with a RMSE of 3.25. Acco
 ![Scatterplot of Actual vs Predicted](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/015eb108-0e7f-4aec-a42d-c1d87946d5c1)
 
 ### Performance 
-| Metric | Value                  |
-|--------|------------------------|
-| R^2    | 0.8663520088839268     |
-| MAE    | 1.7956828981684358     |
-| MSE    | 14.928686957445512     |
-| RMSE   | 3.8637659035512892     |
+
+| Metric                    | Value                  |
+|---------------------------|------------------------|
+| Coefficient of determination (R^2) | 0.9026129516415529    |
+| MAE                       | 1.7451818691025514     |
+| MSE                       | 10.590509789131584     |
+| RMSE                      | 3.254306345311022      |
 
 ![Distribution of Residuals](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/90e1c47d-7438-4bc9-86ef-99ffdaa56f66)
 
