@@ -4,7 +4,7 @@
 
 This project aims to develop a regression model to help estimate taxi cab fares prior to the ride, based on data that TLC has gathered. 
 The TLC data comes from over 200,000 taxi and limousine licensees, making approximately one million combined trips per day. 
-The final linear regression model performed with a R-squared coefficient of 0.84 with RMSE of 4.23. 
+The final linear regression model performed with a R-squared coefficient of 0.90 with RMSE of 3.25. 
 The feature which appeared to be most influential in determining the taxi fare amount was ride duration. 
 
 ## Business Understanding 
@@ -35,8 +35,21 @@ The project uses a dataset called 2017_Yellow_Taxi_Trip_Data.csv. The data is ga
 | Tolls_amount            | Total amount of all tolls paid in trip.                         |
 | Total_amount            | The total amount charged to passengers. Does not include cash tips. |
 
-
 ## Modeling and Evaluation 
 A Multiple Linear Regression (MLR) model was developed to estimate taxi cab fares based on trip distance and duration and time of day the ride took place.  
 
-Prior to the model, a number of pre-processing steps and data transformations were applied to the original dataset. Pre-processing included checking for null values, duplicates and standardising data. Transformations included conbining pickup and dropoff time into a duration column, as well as engineering a rush_hour column to lable whether the ride occured during rush hour. 
+Prior to the model, a number of pre-processing steps and data transformations were applied to the original dataset. Pre-processing included checking for null values, duplicates, removing outliers, validating and standardising data. Transformations included combining pickup and dropoff time into a duration column, as well as engineering a rush_hour column to label whether the ride occurred during rush hour. 
+
+The final features used to train the model are trip_distance, mean_duration and rush_hour. 
+
+![Correlation Heatmap](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/0200a5d6-116e-4125-bfd2-8a1991abe6df)
+
+The resulting model achieved a R-squared score of 0.90 with a RMSE of 3.25. According to the model, the fare increases by an average of $3.59 for every 1 mile traveled.
+
+![Scatterplot of Actual vs Predicted](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/015eb108-0e7f-4aec-a42d-c1d87946d5c1)
+![Distribution of Residuals](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/90e1c47d-7438-4bc9-86ef-99ffdaa56f66)
+
+One concern is that the coeffcient for the rush hour feature turned out to be postive, which is counter-intuitive, as fare prices should theoretically be higher during peak traffic. It may be worth reconsidering the specific time frames we are using to label certain trips as rush hour trips.
+
+## Conclusion 
+This model performs moderately well at estimating taxi fares, however when taking into account that the majority of taxi fare amounts are relatively low at an average of $12.89, having a RMSE of 3.25 may be alarming. 
