@@ -47,6 +47,15 @@ The final features used to train the model are trip_distance, mean_duration and 
 The resulting model achieved a R-squared score of 0.90 with a RMSE of 3.25. According to the model, the fare increases by an average of $3.59 for every 1 mile traveled.
 
 ![Scatterplot of Actual vs Predicted](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/015eb108-0e7f-4aec-a42d-c1d87946d5c1)
+
+### Performance 
+| Metric | Value                  |
+|--------|------------------------|
+| R^2    | 0.8663520088839268     |
+| MAE    | 1.7956828981684358     |
+| MSE    | 14.928686957445512     |
+| RMSE   | 3.8637659035512892     |
+
 ![Distribution of Residuals](https://github.com/felix553/AutomatiData-Taxi-Fare-Forecast/assets/81670336/90e1c47d-7438-4bc9-86ef-99ffdaa56f66)
 
 One concern is that the coeffcient for the rush hour feature turned out to be postive, which is counter-intuitive, as fare prices should theoretically be higher during peak traffic. It may be worth reconsidering the specific time frames we are using to label certain trips as rush hour trips.
